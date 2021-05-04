@@ -57,7 +57,7 @@ public class ConsuInventario extends javax.swing.JFrame {
             }
         });
 
-        setTitle("Agregar Usuario");
+        setTitle("Invntario");
         setAlwaysOnTop(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
