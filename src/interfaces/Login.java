@@ -22,11 +22,11 @@ import static conexion.Conexion.*;
  *
  * @author Delph
  */
-public class PruebaPrida extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
    
 
-    public PruebaPrida() {
+    public Login() {
         initComponents();
         ajustarImagen(lblLogo);
         setLocationRelativeTo(null);
@@ -179,7 +179,7 @@ public class PruebaPrida extends javax.swing.JFrame {
        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PruebaPrida().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }
