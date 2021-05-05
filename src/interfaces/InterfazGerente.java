@@ -22,6 +22,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import menus.MenuUsuarios;
 import subInterfaz.GenerarCorteCaja;
 
 /**
@@ -58,10 +59,9 @@ public class InterfazGerente extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        btnEliminarUsuario = new javax.swing.JLabel();
         btnGastos = new javax.swing.JLabel();
         btnAdministraPRecios = new javax.swing.JLabel();
-        btnAgregarUsuario = new javax.swing.JLabel();
+        btnAdministrarrUsuario = new javax.swing.JLabel();
         btnDescuentosPromociones = new javax.swing.JLabel();
         btnHacerCorteCaja = new javax.swing.JLabel();
         btnIngresarVentas = new javax.swing.JLabel();
@@ -113,16 +113,6 @@ public class InterfazGerente extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
 
-        btnEliminarUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnEliminarUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        btnEliminarUsuario.setText("Eliminar Usuario");
-        btnEliminarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEliminarUsuarioMouseClicked(evt);
-            }
-        });
-
         btnGastos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnGastos.setForeground(new java.awt.Color(51, 51, 51));
         btnGastos.setText("Registrar Gastos");
@@ -143,13 +133,13 @@ public class InterfazGerente extends javax.swing.JFrame {
             }
         });
 
-        btnAgregarUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnAgregarUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        btnAgregarUsuario.setText("Agregar Usuario");
-        btnAgregarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAdministrarrUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnAdministrarrUsuario.setForeground(new java.awt.Color(51, 51, 51));
+        btnAdministrarrUsuario.setText("Administrar Usuario");
+        btnAdministrarrUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdministrarrUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAgregarUsuarioMouseClicked(evt);
+                btnAdministrarrUsuarioMouseClicked(evt);
             }
         });
 
@@ -260,9 +250,8 @@ public class InterfazGerente extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnDescuentosPromociones, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnAgregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAdministrarrUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnAdministraPRecios, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnEliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnIngresarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnDescuentosPromociones1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnIngresarVentas1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -280,10 +269,8 @@ public class InterfazGerente extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(btnAgregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAdministrarrUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(btnIngresarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -325,20 +312,13 @@ public class InterfazGerente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAgregarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioMouseClicked
+    private void btnAdministrarrUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrarrUsuarioMouseClicked
         // TODO add your handling code here:
-        FormAgregarUsuario fau = null;
-        fau = FormAgregarUsuario.getObj();
+        MenuUsuarios fau = null;
+        fau = MenuUsuarios.getObj();
         fau.setLocation(getLocation().x+300,getLocation().y+150);
         fau.setVisible(true);
-    }//GEN-LAST:event_btnAgregarUsuarioMouseClicked
-
-    private void btnEliminarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarUsuarioMouseClicked
-        DatosUsuarios du = null;
-        du = DatosUsuarios.getObj();
-        du.setLocation(getLocation().x+300,getLocation().y+150);
-        du.setVisible(true);        
-    }//GEN-LAST:event_btnEliminarUsuarioMouseClicked
+    }//GEN-LAST:event_btnAdministrarrUsuarioMouseClicked
 
     private void btnGastosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGastosMouseClicked
        // TODO add your handling code here:
@@ -458,11 +438,10 @@ public class InterfazGerente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnAdministraPRecios;
-    private javax.swing.JLabel btnAgregarUsuario;
+    private javax.swing.JLabel btnAdministrarrUsuario;
     private javax.swing.JLabel btnAgregarVenta;
     private javax.swing.JLabel btnDescuentosPromociones;
     private javax.swing.JLabel btnDescuentosPromociones1;
-    private javax.swing.JLabel btnEliminarUsuario;
     private javax.swing.JLabel btnGastos;
     private javax.swing.JLabel btnHV;
     private javax.swing.JLabel btnHacerCorteCaja;
