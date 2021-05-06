@@ -18,6 +18,7 @@ import forms.FormIngresarCliente;
 import forms.FormInventario;
 import forms.FormPromociones;
 import forms.IngresarEntradaSalida;
+import forms.PedidoRepartidor;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -77,6 +78,7 @@ public class InterfazGerente extends javax.swing.JFrame {
         btnRegistrarEntradaSalida = new javax.swing.JLabel();
         btnHV = new javax.swing.JLabel();
         btnIngresarVentas1 = new javax.swing.JLabel();
+        btnPedidos = new javax.swing.JLabel();
         imgLogo = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -235,6 +237,16 @@ public class InterfazGerente extends javax.swing.JFrame {
             }
         });
 
+        btnPedidos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPedidos.setForeground(new java.awt.Color(51, 51, 51));
+        btnPedidos.setText("Pedidos");
+        btnPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPedidosMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -254,7 +266,8 @@ public class InterfazGerente extends javax.swing.JFrame {
                                     .addComponent(btnAdministrarrUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnAdministraPRecios, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnIngresarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnIngresarVentas1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(btnIngresarVentas1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -279,6 +292,8 @@ public class InterfazGerente extends javax.swing.JFrame {
                 .addComponent(btnIngresarVentas1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -295,7 +310,7 @@ public class InterfazGerente extends javax.swing.JFrame {
                 .addComponent(btnGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnHV, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(btnRegistrarEntradaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
@@ -393,6 +408,13 @@ public class InterfazGerente extends javax.swing.JFrame {
         fp.setVisible(true); 
     }//GEN-LAST:event_btnIngresarVentas1MouseClicked
 
+    private void btnPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidosMouseClicked
+        PedidoRepartidor pr = null;
+        pr = PedidoRepartidor.obj.getObj();
+        pr.setLocation(getLocation().x+300,getLocation().y+150);
+        pr.setVisible(true);
+    }//GEN-LAST:event_btnPedidosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -439,6 +461,7 @@ public class InterfazGerente extends javax.swing.JFrame {
     private javax.swing.JLabel btnIngresarVentas;
     private javax.swing.JLabel btnIngresarVentas1;
     private javax.swing.JLabel btnInventario;
+    private javax.swing.JLabel btnPedidos;
     private javax.swing.JLabel btnRegistrarEntradaSalida;
     private javax.swing.JLabel iconoSalir;
     private javax.swing.JLabel imgLogo;

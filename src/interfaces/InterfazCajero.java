@@ -15,6 +15,7 @@ import forms.FormAperturaCaja;
 import forms.FormEditarPrecios;
 import forms.FormIngresarCliente;
 import forms.IngresarEntradaSalida;
+import forms.PedidoRepartidor;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -65,6 +66,7 @@ public class InterfazCajero extends javax.swing.JFrame {
         btnRegistrarEntradaSalida = new javax.swing.JLabel();
         btnCancelarVenta = new javax.swing.JLabel();
         btnHacerCorteCaja1 = new javax.swing.JLabel();
+        btnPedidos = new javax.swing.JLabel();
         imgLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -172,6 +174,16 @@ public class InterfazCajero extends javax.swing.JFrame {
             }
         });
 
+        btnPedidos.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPedidos.setForeground(new java.awt.Color(51, 51, 51));
+        btnPedidos.setText("Pedidos");
+        btnPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPedidosMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -190,7 +202,8 @@ public class InterfazCajero extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(btnIngresarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnCancelarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnApertura, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnHacerCorteCaja1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING))
@@ -205,6 +218,8 @@ public class InterfazCajero extends javax.swing.JFrame {
                 .addComponent(btnCancelarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPedidos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -213,7 +228,7 @@ public class InterfazCajero extends javax.swing.JFrame {
                 .addComponent(btnHacerCorteCaja1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
                 .addComponent(btnRegistrarEntradaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -274,6 +289,13 @@ public class InterfazCajero extends javax.swing.JFrame {
         gcc.setVisible(true);
     }//GEN-LAST:event_btnHacerCorteCaja1MouseClicked
 
+    private void btnPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidosMouseClicked
+        PedidoRepartidor pr = null;
+        pr = PedidoRepartidor.obj.getObj();
+        pr.setLocation(getLocation().x+300,getLocation().y+150);
+        pr.setVisible(true);
+    }//GEN-LAST:event_btnPedidosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +340,7 @@ public class InterfazCajero extends javax.swing.JFrame {
     private javax.swing.JLabel btnCancelarVenta;
     private javax.swing.JLabel btnHacerCorteCaja1;
     private javax.swing.JLabel btnIngresarVentas;
+    private javax.swing.JLabel btnPedidos;
     private javax.swing.JLabel btnRegistrarEntradaSalida;
     private javax.swing.JLabel iconoSalir;
     private javax.swing.JLabel imgLogo;
