@@ -7,22 +7,24 @@ package menus;
 
 import data.DatosUsuarios;
 import forms.FormAgregarUsuario;
+import forms.FormDescuentos;
+import forms.FormPromociones;
 
 /**
  *
  * @author danyc
  */
-public class MenuUsuarios extends javax.swing.JFrame {
+public class MenuDescYProm extends javax.swing.JFrame {
 
     
-    public static MenuUsuarios obj;
+    public static MenuDescYProm obj;
     
-    public static MenuUsuarios getObj(){
+    public static MenuDescYProm getObj(){
         if(obj==null){
-            obj=new MenuUsuarios();
+            obj=new MenuDescYProm();
         }return obj;
     }
-    public MenuUsuarios() {
+    public MenuDescYProm() {
         initComponents();
     }
 
@@ -38,9 +40,9 @@ public class MenuUsuarios extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        btnAgrgarUsuario = new javax.swing.JLabel();
+        btnDescuentos = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        btnEliminarUsuario = new javax.swing.JLabel();
+        btnPromociones = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -62,14 +64,14 @@ public class MenuUsuarios extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 204, 102));
 
-        btnAgrgarUsuario.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        btnAgrgarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgrgarUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnAgrgarUsuario.setText("+");
-        btnAgrgarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgrgarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDescuentos.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        btnDescuentos.setForeground(new java.awt.Color(255, 255, 255));
+        btnDescuentos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnDescuentos.setText("%");
+        btnDescuentos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDescuentos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAgrgarUsuarioMouseClicked(evt);
+                btnDescuentosMouseClicked(evt);
             }
         });
 
@@ -79,27 +81,27 @@ public class MenuUsuarios extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAgrgarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                .addComponent(btnDescuentos, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAgrgarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                .addComponent(btnDescuentos, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 204, 0));
 
-        btnEliminarUsuario.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        btnEliminarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminarUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnEliminarUsuario.setText("-");
-        btnEliminarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnPromociones.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        btnPromociones.setForeground(new java.awt.Color(255, 255, 255));
+        btnPromociones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnPromociones.setText("2X1");
+        btnPromociones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPromociones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEliminarUsuarioMouseClicked(evt);
+                btnPromocionesMouseClicked(evt);
             }
         });
 
@@ -109,24 +111,24 @@ public class MenuUsuarios extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnEliminarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                .addComponent(btnPromociones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnEliminarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                .addComponent(btnPromociones, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ELIMINAR");
+        jLabel1.setText("PROMOCIONES");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("AGREGAR");
+        jLabel2.setText("DESCUNETOS");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -175,21 +177,21 @@ public class MenuUsuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAgrgarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgrgarUsuarioMouseClicked
-        FormAgregarUsuario fau = null;
-        fau = FormAgregarUsuario.getObj();
-        fau.setLocation(getLocation().x,getLocation().y);
-        fau.setVisible(true);
+    private void btnDescuentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDescuentosMouseClicked
+        FormDescuentos fd = null;
+        fd = FormDescuentos.obj.getObj();
+        fd.setLocation(getLocation().x,getLocation().y);
+        fd.setVisible(true); 
         this.dispose();
-    }//GEN-LAST:event_btnAgrgarUsuarioMouseClicked
+    }//GEN-LAST:event_btnDescuentosMouseClicked
 
-    private void btnEliminarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarUsuarioMouseClicked
-        DatosUsuarios du = null;
-        du = DatosUsuarios.getObj();
-        du.setLocation(getLocation().x,getLocation().y);
-        du.setVisible(true);  
+    private void btnPromocionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPromocionesMouseClicked
+        FormPromociones fp = null;
+        fp = FormPromociones.obj.getObj();
+        fp.setLocation(getLocation().x,getLocation().y);
+        fp.setVisible(true); 
         this.dispose();
-    }//GEN-LAST:event_btnEliminarUsuarioMouseClicked
+    }//GEN-LAST:event_btnPromocionesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -208,27 +210,28 @@ public class MenuUsuarios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDescYProm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDescYProm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDescYProm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDescYProm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuUsuarios().setVisible(true);
+                new MenuDescYProm().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnAgrgarUsuario;
-    private javax.swing.JLabel btnEliminarUsuario;
+    private javax.swing.JLabel btnDescuentos;
+    private javax.swing.JLabel btnPromociones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
