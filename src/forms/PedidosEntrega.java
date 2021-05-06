@@ -14,6 +14,14 @@ public class PedidosEntrega extends javax.swing.JFrame {
     /**
      * Creates new form PedidosEntrega
      */
+    public static PedidosEntrega obj;
+    
+    public static PedidosEntrega getObj(){
+        if(obj==null){
+            obj=new PedidosEntrega();
+        }return obj;
+    }
+    
     public PedidosEntrega() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -38,8 +46,6 @@ public class PedidosEntrega extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -70,17 +76,17 @@ public class PedidosEntrega extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID Pedido", "Descripción", "Dirección", "Importe"
+                "ID Pedido", "Descripción", "Nombre Cliente", "Direccion", "Importe"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
