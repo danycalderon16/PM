@@ -7,17 +7,22 @@ package conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
  * @author danyc
  */
 public class Conexion {
+
     public static Connection connection;
     public static Statement consulta;
-    
-    
+    public static boolean valido;
+
     public static void conectarBaseDatos(String host, String port, String database, String user, String password) {
         String url = "";
 
@@ -35,9 +40,24 @@ public class Conexion {
                     url,
                     user,
                     password);
-            boolean valid = connection.isValid(50000);
+            valido = connection.isValid(50000);
         } catch (java.sql.SQLException sqle) {
             System.out.println("Error al conectar con la base de datoa de PostgreSQL (" + url + "):" + sqle.toString());
+        }
+    }
+
+    public static void insertarUsuario(String nombre, String apellido, String pass, char cargo) {
+        String query = "INSERT INTO usuarios (usu_nombre, usu_apellido, usu_pass, usu_rol) \n" +
+                        "VALUES ('"+nombre+"','"+apellido+"','"+pass+"','"+cargo+"')";
+        System.out.println(query);
+        try {
+            if (valido) {
+                consulta = (Statement) connection.createStatement();
+                consulta.executeUpdate(query);
+                showMessageDialog(null, "Se ha insertado Correctamente el usuario");
+            }            
+        } catch (SQLException ex) {
+            showMessageDialog(null, "Error al <INSERTAR> usuario " + ex);
         }
     }
 }
