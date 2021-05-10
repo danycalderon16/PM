@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static conexion.Conexion.*;
+import static util.Utils.*;
 
 /**
  *
@@ -30,7 +31,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         ajustarImagen(lblLogo);
         setLocationRelativeTo(null);
-        conectarBaseDatos("localhost", "5432", "pizzamanager", "postgres", "1234");
+        //conectarBaseDatos();
     }
 
      
@@ -165,9 +166,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContrasenaActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        InterfazGerente ig = new InterfazGerente();
+        /*InterfazGerente ig = new InterfazGerente();
         ig.setVisible(true);
-        this.dispose();
+        this.dispose();*/
+        conectarBaseDatos();
+        //insertarUsuario();
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void labelUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelUsuarioKeyPressed
