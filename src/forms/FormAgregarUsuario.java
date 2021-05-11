@@ -286,7 +286,7 @@ public class FormAgregarUsuario extends javax.swing.JFrame {
                 cargo = CAJERO;
                 break;
             case 2:
-                cargo = REPARTIDO;
+                cargo = REPARTIDOR;
                 break;
             case 3:
                 cargo = COCINERO;

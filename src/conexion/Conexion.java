@@ -7,8 +7,10 @@ package conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -49,7 +51,6 @@ public class Conexion {
     public static void insertarUsuario(String nombre, String apellido, String pass, char cargo) {
         String query = "INSERT INTO usuarios (usu_nombre, usu_apellido, usu_pass, usu_rol) \n" +
                         "VALUES ('"+nombre+"','"+apellido+"','"+pass+"','"+cargo+"')";
-        System.out.println(query);
         try {
             if (valido) {
                 consulta = (Statement) connection.createStatement();
@@ -60,4 +61,39 @@ public class Conexion {
             showMessageDialog(null, "Error al <INSERTAR> usuario " + ex);
         }
     }
+    
+    public static boolean eliminarFila(String consulta){
+        Statement sentencia;
+        System.out.println(consulta);
+        if(valido){
+            try{
+                sentencia = connection.createStatement();                
+                PreparedStatement st = connection.prepareStatement(consulta);
+                st.executeUpdate(); 
+            }catch(SQLException sql){
+                showMessageDialog(null,"Error en la consulta: "+ sql.toString());
+                return false;
+            }        
+        }else{
+             showMessageDialog(null, "Se ha perdido la conexion. Verifique con el administrador");
+             return false;
+        }
+        return true;
+    }
+    
+    public static ResultSet getDatos(String consulta){    
+        Statement sentencia;
+        ResultSet datos = null;
+        if(valido){
+            try{
+                sentencia = connection.createStatement();
+                datos = sentencia.executeQuery(consulta);
+            }catch(SQLException sql){
+                showMessageDialog(null,"Error en la consulta: "+ sql.toString());
+            }        
+        }else
+             showMessageDialog(null, "Se ha perdido la conexion. Verifique con el administrador");
+        return datos;
+    }
+    
 }
