@@ -5,7 +5,6 @@
  */
 package forms;
 
-import static conexion.Conexion.connection;
 import static conexion.Conexion.consulta;
 import interfaces.Ventana;
 import java.awt.Toolkit;

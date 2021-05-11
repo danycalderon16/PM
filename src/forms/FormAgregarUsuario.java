@@ -5,8 +5,11 @@
  */
 package forms;
 
+<<<<<<< HEAD
 import conexion.Conexion;
 import static conexion.Conexion.connection;
+=======
+>>>>>>> e2ad9325679610776aa17fbda5c7a13f2b5dcfa2
 import static conexion.Conexion.consulta;
 import static conexion.Conexion.insertarUsuario;
 import interfaces.Ventana;
@@ -261,6 +264,7 @@ public class FormAgregarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+<<<<<<< HEAD
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
         String pass = txtPass.getText();
@@ -293,6 +297,9 @@ public class FormAgregarUsuario extends javax.swing.JFrame {
                 break;
         }   
         insertarUsuario(nombre, apellido, pass, cargo);
+=======
+       
+>>>>>>> e2ad9325679610776aa17fbda5c7a13f2b5dcfa2
     }//GEN-LAST:event_jLabel9MouseClicked
 
     /**

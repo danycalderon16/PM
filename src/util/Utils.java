@@ -5,6 +5,7 @@
  */
 package util;
 
+<<<<<<< HEAD
 import java.awt.Font;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,12 +16,19 @@ import static conexion.Conexion.*;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+=======
+import conexion.LibreriaConexion;
+import java.sql.SQLException;
+import java.sql.Statement;
+import static javax.swing.JOptionPane.showMessageDialog;
+>>>>>>> e2ad9325679610776aa17fbda5c7a13f2b5dcfa2
 
 /**
  *
  * @author danyc
  */
 public class Utils {
+<<<<<<< HEAD
     public static final char CAJERO = 'c';
     public static final char COCINERO = 'o';
     public static final char REPARTIDOR = 'r';
@@ -45,4 +53,10 @@ public class Utils {
         Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_SMOOTH);  
         return new ImageIcon(resizedImage);
     }
+=======
+    
+    public static LibreriaConexion libreria = new LibreriaConexion();
+   
+    
+>>>>>>> e2ad9325679610776aa17fbda5c7a13f2b5dcfa2
 }
